@@ -12,3 +12,62 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.main-container {
+  width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 380px;
+}
+
+.slider-list {
+  list-style: none;
+  width: 2800px;
+  position: absolute;
+  top: 0px;
+  left: -40px;
+  transition: 2s;
+}
+
+.slider-image {
+  width: 700px;
+}
+
+.slider-item {
+  display: inline-block;
+}
+
+.button-left {
+  font-size: 30px;
+  float: left;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding-bottom: 7px;
+}
+
+.button-right {
+  font-size: 30px;
+  float: right;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding-bottom: 7px;
+}
+
+.button-left:hover,
+.button-right:hover {
+  color: red;
+}
+
+.button-group {
+  width: 100%;
+  position: absolute;
+  top: 40%;
+  width: 100%;
+}
