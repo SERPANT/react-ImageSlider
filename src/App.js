@@ -6,10 +6,16 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = { left: -40, moving: true, animation: false };
+    this.imageList = [
+      "colorado.jpg",
+      "sunrise.jpg",
+      "monte-vista.jpg",
+      "medium.jpg"
+    ];
   }
 
   componentDidMount() {
-    this.sliderList = document.getElementsByClassName("slider-list")[0];
+    this.sliderList = this.refs.slider;
     setInterval(() => {
       if (this.state.animation === false) {
         this.setState({ animation: true }, () => {
@@ -73,16 +79,25 @@ class App extends Component {
       }
     }
   }
+
   render() {
+    let dots = [];
+    for (let i in this.imageList) {
+      dots.push(
+        <li key={i} className="dots">
+          <span className="dot-image" />
+        </li>
+      );
+    }
     return (
       <div className="App">
         <div className="main-container">
           <div className="slider-container">
-            <ul className="slider-list">
-              <SliderImage image="./images/colorado.jpg" />
-              <SliderImage image="./images/sunrise.jpg" />
-              <SliderImage image="./images/monte-vista.jpg" />
-              <SliderImage image="./images/medium.jpg" />
+            <ul className="slider-list" ref="slider">
+              {this.imageList.map((image, index) => {
+                let location = `./images/${image}`;
+                return <SliderImage image={location} key={index} />;
+              })}
             </ul>
           </div>
 
@@ -99,6 +114,9 @@ class App extends Component {
               returnValue="+"
               buttonClass="button-right"
             />
+          </div>
+          <div>
+            <ul className="dot-group">{dots}</ul>
           </div>
         </div>
       </div>

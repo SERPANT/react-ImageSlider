@@ -71,3 +71,17 @@ code {
   top: 40%;
   width: 100%;
 }
+
+.dot-group {
+  list-style: none;
+}
+
+.dots {
+  display: inline-block;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.dots span {
+  background: url("");
+}
